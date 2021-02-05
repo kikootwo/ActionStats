@@ -3,7 +3,7 @@ GoLang Action Stats, Technical Challenge for JumpCloud
 
 ```
 This is a library for Go Language designed to meet the specs of the JumpCloud Technical Challenge
-Assumptions: Developed using Go SDK 1.16rc1
+Assumptions: Intended to be run on a Windows/Mac/Linux Computer with Go SDK 1.16rc1 installed.
 ```
 
 ## Installation
