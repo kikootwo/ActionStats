@@ -16,7 +16,7 @@ func main() {
 	RandomTestCases(100, actions)
 	RandomTestCases(1000, actions)
 	RandomTestCases(10000, actions)
-	RandomTestCases(100000, actions)
+	IntentionalBadData()
 }
 
 func GivenTestCase()  {
@@ -37,6 +37,18 @@ func RandomTestCases(numberOfRuns int, actions []string)  {
 		time := rand.Intn(2000)
 		ActionStats.AddAction(fmt.Sprint("{\"action\":\"", action, "\", \"time\":", time, "}"))
 	}
+	fmt.Println(ActionStats.GetStats())
+	ActionStats.Reset()
+}
+
+func IntentionalBadData(){
+	action1 := ""
+	action2 := "J̷̞̟̜̱̺͗̀͜u̶̡̧̻̥͔͛̔͆̒̂͑̓͝m̴̧̧̧͔̖̩̬̋͛̊̎̑̌́̾͘p̵̨̞̦̪͇̎͊̒̿c̵̞͓̥̳̞̪̜̍̚͘l̴̢̢̜̗̫͚̫̭̠̓̔͐̏ŏ̶̧̼̜͉͍͎͉̜̟́̀͊u̸͉͎̫̣̠̱̩̙̔̓̈́̊̽̓̓̔̅̌d̴̢͓͕͍̎̅͛̃"
+	action3 := "{\"action\":\"jump\", \"time\",200}"
+	ActionStats.AddAction(action1)
+	ActionStats.AddAction(action2)
+	ActionStats.AddAction(action3)
+
 	fmt.Println(ActionStats.GetStats())
 	ActionStats.Reset()
 }
